@@ -44,8 +44,9 @@ pod, gradle dep, Info.plist/manifest), it needs a store release — and the
 store version it ships in must **not** be added to the allowlist of a bundle
 built against the old native code.
 
-`raw.githubusercontent.com` caches each file for up to ~5 minutes. The app
-cache-busts `update.json`, and a new filename per version means a device can
+`raw.githubusercontent.com` caches each file for up to ~5 minutes, and a
+query string does not bypass that, so a change to `update.json` takes up to
+~5 minutes to reach devices. A new filename per version means a device can
 never be served the previous version's zip from cache — so never overwrite a
 zip in place.
 
