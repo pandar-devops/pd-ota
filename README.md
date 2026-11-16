@@ -31,9 +31,12 @@ npm run export-android   # -> android/index.android.bundle.zip + android/sourcem
 
 Then here:
 
-1. Copy the zip into `ios/` or `android/` (overwrite the previous one).
-2. In `update.json`, bump that platform's `version` by 1 and make sure the
-   store version you're targeting is in `allowedAppVersions`.
+1. Copy the zip into `ios/` or `android/` with the new version in its name —
+   e.g. for version 3: `ios/main-v3.jsbundle.zip`,
+   `android/index.android.bundle-v3.zip`. Delete the previous version's zip.
+2. In `update.json`, bump that platform's `version` to match, point its `url`
+   at the new filename, and make sure the store version you're targeting is
+   in `allowedAppVersions`.
 3. Commit and push to `main`.
 
 Only ship JS-only changes. If a change touches native code (new native module,
@@ -41,10 +44,12 @@ pod, gradle dep, Info.plist/manifest), it needs a store release — and the
 store version it ships in must **not** be added to the allowlist of a bundle
 built against the old native code.
 
-`raw.githubusercontent.com` caches for up to ~5 minutes; the app
-cache-busts `update.json`, but give the zip a few minutes after pushing.
+`raw.githubusercontent.com` caches each file for up to ~5 minutes. The app
+cache-busts `update.json`, and a new filename per version means a device can
+never be served the previous version's zip from cache — so never overwrite a
+zip in place.
 
 ## Rolling back
 
-Re-upload the previous good zip and bump `version` again (devices only move
-forward), or clear `allowedAppVersions` to stop further downloads.
+Re-upload the previous good bundle under the next version's filename and bump
+`version` again (devices only move forward), or clear `allowedAppVersions` to stop further downloads.
