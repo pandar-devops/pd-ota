@@ -1,16 +1,16 @@
 {
   "ios": {
-    "version": 5,
+    "version": 6,
     "allowedAppVersions": [
       "2.0.0"
     ],
-    "url": "https://raw.githubusercontent.com/pandar-devops/pd-ota/main/ios/main-v5.jsbundle.zip"
+    "url": "https://raw.githubusercontent.com/pandar-devops/pd-ota/main/ios/main-v6.jsbundle.zip"
   },
   "android": {
-    "version": 5,
+    "version": 6,
     "allowedAppVersions": [
       "4.0.0"
     ],
-    "url": "https://raw.githubusercontent.com/pandar-devops/pd-ota/main/android/index.android.bundle-v5.zip"
+    "url": "https://raw.githubusercontent.com/pandar-devops/pd-ota/main/android/index.android.bundle-v6.zip"
   }
 }
