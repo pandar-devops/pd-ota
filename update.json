@@ -1,11 +1,11 @@
 {
   "ios": {
-    "version": 18,
+    "version": 19,
     "allowedAppVersions": [
       "2.0.1",
       "2.0.2"
     ],
-    "url": "https://raw.githubusercontent.com/pandar-devops/pd-ota/main/ios/main-v18.jsbundle.zip"
+    "url": "https://raw.githubusercontent.com/pandar-devops/pd-ota/main/ios/main-v19.jsbundle.zip"
   },
   "android": {
     "version": 14,
